@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevJobs - Empleos</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script type="module" src="../js/app.js"></script>
 </head>
 
 <body>
@@ -107,7 +108,7 @@
                             comunicación.
                         </p>
                     </div>
-                    <button type="submit">Aplicar</button>
+                    <button class="apply-button" id="boton-importante">Aplicar</button>
                 </article>
 
                 <article class="job-card">
@@ -119,7 +120,7 @@
                         herramientas
                         de visualización. Se requiere conocimiento en SQL, Python y R.
                     </p>
-                    <button type="submit">Aplicar</button>
+                    <button class="apply-button" >Aplicar</button>
                 </article>
 
                 <article class="job-card">
@@ -129,7 +130,7 @@
                         Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android.
                         El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.
                     </p>
-                    <button type="submit">Aplicar</button>
+                    <button class="apply-button">Aplicar</button>
                 </article>
 
                 <article class="job-card">
@@ -142,18 +143,28 @@
                         AWS,
                         Azure o GCP.
                     </p>
-                    <button type="submit">Aplicar</button>
+                    <button class="apply-button">Aplicar</button>
                 </article>
             </div>
             <!-- Paginación -->
             <nav class="pagination">
-                <a class="pagination-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg></a>
+                <a class="pagination-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M15 6l-6 6l6 6" />
+                    </svg></a>
                 <a class="pagination-link , is-active" href="#">1</a>
                 <a class="pagination-link" href="#">2</a>
                 <a class="pagination-link" href="#">3</a>
                 <a class="pagination-link" href="#">4</a>
                 <a class="pagination-link" href="#">5</a>
-                <a class="pagination-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg></a>
+                <a class="pagination-link" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M9 6l6 6l-6 6" />
+                    </svg></a>
             </nav>
         </section>
     </main>

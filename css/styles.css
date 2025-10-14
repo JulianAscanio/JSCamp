@@ -194,7 +194,7 @@ input[type="text"]::placeholder {
     color: #64748b;
 }
 
-button[type="submit"] {
+button {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     background-color: var(--primary-light);
@@ -704,5 +704,14 @@ article {
     .hero-section p br,
     main>section:nth-child(2) header p br {
         display: none !important;
+    }
+}
+
+/* Estilos para el botón "Aplicar" */
+.apply-button {
+    background-color: var(--primary-light);
+    &.is-applied {
+        background-color: #10b981;
+        pointer-events: none;
     }
 }

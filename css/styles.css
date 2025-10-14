@@ -61,6 +61,7 @@ h1+p {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     h2 {
         font-size: 1.25rem;
         font-weight: 700;
@@ -98,18 +99,18 @@ header div a {
     text-decoration: none;
 }
 
-#empleo{
+#empleo {
     background-color: var(--primary-dark);
     color: #287dd1;
+
+    &:hover {
+        background-color: var(--primary-hover);
+        color: white;
+        transition: all 0.2s ease-in-out;
+    }
 }
 
-#empleo:hover{
-    background-color: var(--primary-hover);
-    color: white;
-    transition: all 0.2s ease-in-out;
-}
-
-#login:hover{
+#login:hover {
     background-color: var(--primary);
     color: white;
     transition: all 0.2s ease-in-out;
@@ -124,17 +125,15 @@ header div a {
     align-items: center;
     position: relative;
     z-index: 1;
-    background-image: 
-        linear-gradient(
-            to bottom, 
+    background-image:
+        linear-gradient(to bottom,
             rgba(0, 0, 0, 0.45),
-            var(--background) 100%
-        ),
+            var(--background) 100%),
         url('../resources/background.webp');
-        
+
     background-size: cover;
     background-position: center;
-    
+
     h1 {
         font-size: 3.5rem;
         font-weight: 800;
@@ -177,10 +176,10 @@ form>div {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
+    box-shadow: 0 2px 6px rgb(0, 0, 0);
+}
 
-form input[type="text"] {
+input[type="text"] {
     flex: 1;
     background: var(--card-bg);
     border: none;
@@ -191,11 +190,11 @@ form input[type="text"] {
     font-family: inherit;
 }
 
-form input[type="text"]::placeholder {
+input[type="text"]::placeholder {
     color: #64748b;
 }
 
-form button[type="submit"] {
+button[type="submit"] {
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     background-color: var(--primary-light);
@@ -207,13 +206,17 @@ form button[type="submit"] {
     font-family: inherit;
     font-size: 1rem;
     white-space: nowrap;
-}
 
-form button[type="submit"]:hover,
-form button[type="submit"]:focus {
-    background-color: var(--primary-hover);
-    outline: 2px solid white;
-    outline-offset: 2px;
+    &:hover,
+    &:focus {
+        background-color: var(--primary-hover);
+        outline: 2px solid white;
+        outline-offset: 2px;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
 }
 
 main>section:nth-child(2) {
@@ -224,7 +227,7 @@ main>section:nth-child(2) {
     &>header {
         gap: 2px;
         flex-direction: column;
-        margin-bottom: 3rem; 
+        margin-bottom: 3rem;
 
         h2 {
             text-align: center;
@@ -300,8 +303,138 @@ article {
     }
 }
 
+.jobs-search {
+    margin: 0;
+    padding: 0;
+    height: auto !important;
+    min-height: auto !important;
+    background: var(--background);
+    padding: 2rem 1rem;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: .25rem;
+    }
+
+    p {
+        font-size: 1.125rem;
+        color: var(--text-muted);
+        margin-bottom: 1.5rem;
+    }
+
+    .search-input {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        background: var(--input-bg);
+        border-radius: .5rem;
+        padding: .25rem .5rem;
+        flex: 1;
+    }
+
+    .search-filters {
+        display: inline-block;
+        margin-top: .5rem;
+
+        select{
+            background: var(--input-bg);
+            border: none;
+            color: var(--text-primary);
+            padding: .5rem 1rem;
+            border-radius: .5rem;
+            margin: .25rem;
+            cursor: pointer;
+        }
+
+    }
+
+    form{
+        width: 100%;
+        max-width: 1280px;
+    }
+
+    form div{
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+}
+
+.jobs-grid {
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 1rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+
+    article {
+        background: none;
+        border-radius: 0;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+        margin: 0;
+
+        display: inline-flex;
+        align-items: start;
+        gap: 1rem;
+
+        small{
+            font-size: .875rem;
+            opacity: .75;
+        }
+
+        p {
+            margin-top: 0.5rem;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    h3{
+        text-align: left;
+        margin-bottom: .25rem;
+    }
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-block: 2rem;
+
+    .pagination-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        text-decoration: none;
+        color: var(--text-muted);
+        transition: all .3s;
+        border-radius: .5rem;
+
+        &:hover{
+            background-color: #ffffff;
+        }
+
+        &:active{
+            transform: scale(0.95);
+        }
+
+        &.is-active{
+            background-color: var(--primary-light);
+            color: white;
+            pointer-events: none;
+        }
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 850px) {
+
     /* Header */
     header {
         flex-direction: column;
@@ -322,7 +455,7 @@ article {
         gap: 1rem;
     }
 
-    header > div {
+    header>div {
         flex-direction: column;
         width: 100%;
         gap: 0.5rem;
@@ -379,28 +512,28 @@ article {
     }
 
     /* Features Section */
-    main > section:nth-child(2) {
+    main>section:nth-child(2) {
         padding: 2rem 1rem !important;
     }
 
-    main > section:nth-child(2) header {
+    main>section:nth-child(2) header {
         padding: 0 !important;
         text-align: center;
     }
 
-    main > section:nth-child(2) header h2 {
+    main>section:nth-child(2) header h2 {
         font-size: 1.5rem !important;
     }
 
-    main > section:nth-child(2) header p {
+    main>section:nth-child(2) header p {
         font-size: 1rem !important;
     }
 
-    main > section:nth-child(2) header p br {
+    main>section:nth-child(2) header p br {
         display: none;
     }
 
-    main > section:nth-child(2) footer {
+    main>section:nth-child(2) footer {
         grid-template-columns: 1fr !important;
         gap: 1rem;
     }
@@ -419,6 +552,7 @@ article {
 }
 
 @media (max-width: 480px) {
+
     /* Header más compacto */
     header {
         padding: 0.75rem !important;
@@ -471,15 +605,15 @@ article {
     }
 
     /* Features Section más compacta */
-    main > section:nth-child(2) {
+    main>section:nth-child(2) {
         padding: 1.5rem 1rem !important;
     }
 
-    main > section:nth-child(2) header h2 {
+    main>section:nth-child(2) header h2 {
         font-size: 1.3rem !important;
     }
 
-    main > section:nth-child(2) header p {
+    main>section:nth-child(2) header p {
         font-size: 0.9rem !important;
     }
 
@@ -539,7 +673,7 @@ article {
     .search-form svg {
         display: none !important;
     }
-    
+
     .search-form input {
         padding-left: 1rem !important;
     }
@@ -547,18 +681,18 @@ article {
 
 /* Asegurar que los botones queden en columna */
 @media (max-width: 768px) {
-    header > div {
+    header>div {
         flex-direction: column !important;
         align-items: center !important;
     }
-    
+
     header div a {
         display: block !important;
         width: 100% !important;
         max-width: 250px !important;
         margin-bottom: 0.5rem !important;
     }
-    
+
     header div a:last-child {
         margin-bottom: 0 !important;
     }
@@ -566,8 +700,9 @@ article {
 
 /* Remover saltos de línea innecesarios en responsive */
 @media (max-width: 768px) {
+
     .hero-section p br,
-    main > section:nth-child(2) header p br {
+    main>section:nth-child(2) header p br {
         display: none !important;
     }
 }

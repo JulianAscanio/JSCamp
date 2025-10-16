@@ -68,20 +68,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const selects = document.querySelectorAll('select');
 
     function handleFilterChange() {
-        const locationFilter = document.querySelector('#location-filter').value;
-        const technologyFilter = document.querySelector('#technology-filter').value;
-        const contractFilter = document.querySelector('#contract-filter').value;
-        const experienceFilter = document.querySelector('#experience-filter').value;
+        const selectsArray = Array.from(selects);
+        const technologyFilter = selectsArray[0]?.value || '';
+        const locationFilter = selectsArray[1]?.value || '';
+        const contractFilter = selectsArray[2]?.value || '';
+        const experienceFilter = selectsArray[3]?.value || '';
 
         const jobListings = document.querySelectorAll('.job-card');
 
         jobListings.forEach(listing => {
             const jobLocation = listing.getAttribute('data-location');
-            const jobTechnology = listing.getAttribute('data-tecnology');
+            const jobTechnology = listing.getAttribute('data-tecnology').split(' ');
             const jobContract = listing.getAttribute('data-contract');
             const jobExperience = listing.getAttribute('data-experience');
 
-            const technologyMatch = !technologyFilter || jobTechnology === technologyFilter;
+            const technologyMatch = !technologyFilter || jobTechnology.includes(technologyFilter);
             const locationMatch = !locationFilter || jobLocation === locationFilter;
             const contractMatch = !contractFilter || jobContract === contractFilter;
             const experienceMatch = !experienceFilter || jobExperience === experienceFilter;

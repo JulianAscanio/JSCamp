@@ -19,7 +19,7 @@
 //    });
 //});
 
-//fuhcionalidad del filtro de trabajos
+//fuhcionalidad del input de trabajos
 const filterInput = document.querySelector('.search-bar');
 filterInput?.addEventListener('input', function(event) {
 
@@ -64,6 +64,7 @@ filterInput?.addEventListener('input', function(event) {
 //    });
 //})
 
+//filtro multiple
 document.addEventListener('DOMContentLoaded', function() {
     const selects = document.querySelectorAll('select');
 
@@ -104,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
         handleFilterChange();
 });
 
+
+//funcionalidad del botón aplicar
 const jobsGridSection = document.querySelector('.jobs-grid');
 
 jobsGridSection?.addEventListener('click', function(event) {

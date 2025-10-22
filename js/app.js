@@ -118,3 +118,7 @@ jobsGridSection?.addEventListener('click', function(event) {
         element.disabled = true;
     }
 });
+
+console.log('antes del fetch');
+fetch("./data.json")
+    
